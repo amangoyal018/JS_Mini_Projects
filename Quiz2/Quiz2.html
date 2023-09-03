@@ -96,6 +96,18 @@
     function getMultipleChoices(n, correctAnswer, array) {
         // Use a while loop and the getRandomElement() function
         // Make sure there are no duplicates in the array
+        const choices = [];
+        choices.push(correctAnswer); 
+        while(choices.length < n){
+            let a = getRandomElement(array);
+            if(choices.includes(a)){
+                continue;
+            }else{
+                choices.push(a);
+            }
+        }
+        shuffleArray(choices);
+        return choices;
 
     }
 
